@@ -1,0 +1,39 @@
+name: Publish on NPM
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    name: Publish
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Check version changes
+      uses: EndBug/version-check@v1.0.0
+      id: check
+      with:
+        file-name: package.json
+        diff-search: true
+    - name: Use Node.js ${{ matrix.node-version }}
+      if: steps.check.outputs.changed == 'true'
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      if: steps.check.outputs.changed == 'true'
+      run: npm ci
+    - name: Publish package to NPM
+      if: steps.check.outputs.changed == 'true'
+      run: |
+        npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
