@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/sergeyzwezdin/hexo-related-posts.git"
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "keywords": [
     "tf",
     "idf",
