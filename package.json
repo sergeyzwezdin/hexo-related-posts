@@ -1,6 +1,6 @@
 {
   "name": "hexo-related-posts",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Hexo plugin that generates related posts list with TF/IDF algorithm",
   "main": "index.js",
   "repository": {
