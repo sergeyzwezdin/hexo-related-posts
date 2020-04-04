@@ -1,0 +1,28 @@
+{
+  "name": "hexo-related-posts",
+  "version": "0.1.0",
+  "description": "Hexo plugin that generates related posts list with TF/IDF algorithm",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeyzwezdin/hexo-related-posts.git"
+  },
+  "keywords": [
+    "tf",
+    "idf",
+    "tf/idf",
+    "related",
+    "popular",
+    "hexo"
+  ],
+  "author": "Sergey Zwezdin <sergey@zwezdin.com> (https://zwezdin.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergeyzwezdin/hexo-related-posts/issues"
+  },
+  "homepage": "https://github.com/sergeyzwezdin/hexo-related-posts#readme",
+  "devDependencies": {
+    "hexo": "^4.2.0",
+    "natural": "^0.6.3"
+  }
+}
