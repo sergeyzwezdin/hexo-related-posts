@@ -1,24 +1,28 @@
-# hexo-related-posts
+# hexo-related-posts ![Publish on NPM](https://github.com/sergeyzwezdin/hexo-related-posts/workflows/Publish%20on%20NPM/badge.svg) ![](https://img.shields.io/npm/v/hexo-related-posts)
 
-![Publish on NPM](https://github.com/sergeyzwezdin/hexo-related-posts/workflows/Publish%20on%20NPM/badge.svg) ![](https://img.shields.io/npm/v/hexo-related-posts)
+`hexo-related-posts` is a plugin for Hexo static site generator that generates related posts list with TF/IDF algorithm.
 
-[Hexo](https://hexo.io/) plugin that generates related posts list with TF/IDF algorithm.
+## How it works
+
+1. The plugin scans all posts on the website and extracts words for every post.
+2. For every word [stemmers](https://github.com/NaturalNode/natural#stemmers) are applied.
+3. After normalizing of the words, they are grouped into a dictionary like `word → count` for every post.
+4. [TF/IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) is calculated for every post.
+5. Post title, description, keywords, tags, categories are also used to compare the posts.
+6. The `related_posts` property added to every post so you can use it the template and display related posts 🎉.
 
 ## Requirements
 - Hexo: 4.x
 - Node 12+
 
-## Installation
+## Usage
 
+1. Install the plugin using npm:
 ```bash
 $ npm install hexo-related-posts --save-dev
 ```
-
-## Usage
-
-After installation, add `related_posts` to Hexo config file (see details [below](#Configuration)).
-
-Once the plugin installed and configured, you can use it in post's template. The new `related_posts` property will appear in `page` variable.
+2. Add `related_posts` to Hexo config file (see details [below](#Configuration)).
+3. The new `related_posts` property will appear in the `page` variable.
 
 The example of post layout that generates list of related post:
 
