@@ -2,6 +2,12 @@
 
 `hexo-related-posts` is a plugin for Hexo static site generator that generates related posts list with TF/IDF algorithm.
 
+* **Increases time** users spend on your website by suggesting related content.
+* Supports **a few different languages**, including English, French, Russian, Italian, Japanese, and many others.
+* Allows to define **"reserved" words** that won't be split during word normalize (e.g. `ASP.NET` will not be split into `ASP` and `NET`).
+* **Highly customizable**. Allows to define weight for every component.
+
+
 ## How it works
 
 1. The plugin scans all posts on the website and extracts words for every post.
