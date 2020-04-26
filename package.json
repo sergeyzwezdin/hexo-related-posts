@@ -25,10 +25,11 @@
     "url": "https://github.com/sergeyzwezdin/hexo-related-posts/issues"
   },
   "homepage": "https://github.com/sergeyzwezdin/hexo-related-posts#readme",
-  "devDependencies": {
-    "natural": "^0.6.3"
-  },
   "peerDependencies": {
     "hexo": "^4.2.0"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "natural": "^1.0.1"
   }
 }
