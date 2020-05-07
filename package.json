@@ -26,10 +26,13 @@
   },
   "homepage": "https://github.com/sergeyzwezdin/hexo-related-posts#readme",
   "peerDependencies": {
-    "hexo": "^4.2.0"
+    "hexo": "^4.2.0",
+    "chalk": "^4.0.0"
   },
   "dependencies": {
-    "chalk": "^4.0.0",
     "natural": "^1.0.1"
+  },
+  "devDependencies": {
+    "chalk": "^4.0.0"
   }
 }
