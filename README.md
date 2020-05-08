@@ -48,6 +48,8 @@ The example of post layout that generates list of related post:
 <% } %>
 ```
 
+❗️ **IMPORTANT NOTE**. Before building the website for production you should run [`hexo clean`](https://hexo.io/docs/commands.html#clean) to re-invalidate all relations between the pages.
+
 ## Configuration
 
 To configure the plugin add `related_posts` to Hexo config file. Example:
