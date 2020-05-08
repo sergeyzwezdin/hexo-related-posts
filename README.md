@@ -77,7 +77,7 @@ related_posts:
 
 | Key | Required | Default value | Description |
 | --- | --- | --- | --- |
-| `enabled` | no | `true` | Flag to disable plugin execution. |
+| `enable` | no | `true` | Flag to disable plugin execution. |
 | `enable_env_name` | no | | It's possible to disable plugin execution depending on env variable. For example, if you want to calculate related post only for production build, you can set this parameter to `prod`. In this case, related post will be generated only if you put `prod` key during running Hexo, i.e. `hexo generate -- --prod` |
 | `filter_threshold` | no | `0.2` | During related posts calculation some number is going to be calculated. The more value means that the posts more similar. So, if you see that it calculates "unrelated" posts, you can slightly increase this value. |
 | `related_count` | no | `5` | Number of posts that will be included into final list of related posts. |
