@@ -23,6 +23,21 @@ const enable =
     (hexo.config.related_posts.enable_env_name !== undefined ? hexo.env.args[hexo.config.related_posts.enable_env_name] : true);
 
 if (enable) {
-    hexo.extend.filter.register('before_generate', require('./lib/calcRelatedPosts')(hexo), 9);
-    hexo.extend.filter.register('before_post_render', require('./lib/postRender')(hexo), 10);
+    const calcRelatedPosts = require('./lib/calcRelatedPosts')(hexo);
+    const postRender = require('./lib/postRender')(hexo);
+    let calculated = false;
+
+    hexo.extend.filter.register('before_post_render', function (data) {
+        if (calculated === false) {
+            calculated = true;
+            calcRelatedPosts();
+            postRender(data);
+        } else {
+            postRender(data);
+        }
+    });
+
+    hexo.extend.filter.register('after_generate', function () {
+        calculated = false;
+    });
 }
