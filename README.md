@@ -34,15 +34,23 @@ The example of post layout that generates list of related post:
 
 ```ejs
 <% if (page.related_posts && page.related_posts.length > 0) { %>
-    <section>
+    <section class="related-posts">
         <h2>Related posts</h2>
         <ul>
-        <% for (const path of page.related_posts) { %>
-            <% const url = url_for(path) %>
-            <% if (url) { %>
-                <li><a href="<%= url %>"><%= url %></a></li>
-            <% } %>
-        <% } %>
+        <%
+        for (const path of page.related_posts) {
+            var posts = site.posts.filter(function(post) {
+                return post.path === path;
+            });
+            if (posts && posts.length > 0) {
+                posts.each(function(apost) {
+                %>
+                <li><a href="<%- url_for(apost.path) %>"><%= apost.title || '(no title)' %></a></li>
+                <%
+                });
+            }
+        }
+        %>
         </ul>
     </section>
 <% } %>
