@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
     - name: Install dependencies
       if: steps.check.outputs.changed == 'true'
-      run: npm ci
+      run: npm i
     - name: Publish package to NPM
       if: steps.check.outputs.changed == 'true'
       run: |
